@@ -11,6 +11,13 @@
 
 Welcome to your Remotion project!
 
+This project has been scaffolded for a College Bus Route Visualizer:
+- Sidebar-driven dashboard UI (previewed inside Remotion Studio)
+- Central animation panel using `@remotion/player`
+- Remotion composition `BusRoutes` for CLI renders
+- Modular components for routes, buses, stops, dashboards, and export panel
+- Simulated live data to visualize movement
+
 ## Commands
 
 **Install Dependencies**
@@ -25,10 +32,13 @@ npm i
 npm run dev
 ```
 
+This launches Remotion Studio and mounts the dashboard UI. You can interact with the sidebar and inspect the `BusRoutes` composition.
+
 **Render video**
 
 ```console
-npx remotion render
+# Render the BusRoutes composition to MP4
+npx remotion render src/index.ts BusRoutes out/video.mp4
 ```
 
 **Upgrade Remotion**
@@ -36,6 +46,15 @@ npx remotion render
 ```console
 npx remotion upgrade
 ```
+
+## Structure
+
+- `src/App.tsx` — Main dashboard layout with sidebar, animation, dashboards, export panel.
+- `src/compositions/BusRouteComposition.tsx` — Remotion composition for export.
+- `src/components/` — UI components (Sidebar, AnimationPanel, DashboardPanel, ExportPanel).
+- `src/components/visualization/RouteMap.tsx` — SVG map for routes, stops, buses.
+- `src/data/simulatedData.ts` — Dummy routes and live ticking bus positions.
+- `src/theme.ts` — Theme and color system.
 
 ## Docs
 

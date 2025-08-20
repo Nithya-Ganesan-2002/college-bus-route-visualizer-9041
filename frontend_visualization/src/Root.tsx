@@ -1,6 +1,8 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { BusRouteComposition } from "./compositions/BusRouteComposition";
+import { ROUTES, INITIAL_BUSES } from "./data/simulatedData";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -24,6 +26,21 @@ export const RemotionRoot: React.FC = () => {
           titleColor: "#000000",
           logoColor1: "#91EAE4",
           logoColor2: "#86A8E7",
+        }}
+      />
+
+      {/* New Bus Route Composition wired for export */}
+      <Composition
+        id="BusRoutes"
+        component={BusRouteComposition}
+        durationInFrames={600}
+        fps={30}
+        width={1280}
+        height={720}
+        defaultProps={{
+          buses: INITIAL_BUSES,
+          routes: ROUTES,
+          colors: { primary: "#1B263B", secondary: "#415A77", accent: "#FFC300" },
         }}
       />
 
