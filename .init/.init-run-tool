@@ -1,0 +1,4 @@
+{
+    "command": "BROWSER=none npm run dev -- --port <port> --host <host>",
+    "working_directory": "/home/kavia/workspace/code-generation/college-bus-route-visualizer-9041/frontend_visualization"
+}
